@@ -9,6 +9,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Compile our storage implementation into a library.
 add_library(storage
     src/storage.cpp
+    src/csv_loader.cpp
 )
 
 # Allow files to include "storage.hpp".

@@ -1,14 +1,13 @@
-#include "storage.hpp"
+#include "csv_loader.hpp"
+#include <iostream>
 
 int main()
 {
-    ColumnStore columns;
+    Employee employee = parse_employee("1,25,60000");
 
-    columns.insert(Employee{1, 25, 60000});
-    columns.insert(Employee{2, 32, 85000});
-    columns.insert(Employee{3, 41, 110000});
-
-    columns.diagnostic();
+    std::cout << "ID: " << employee.id << '\n';
+    std::cout << "Age: " << employee.age << '\n';
+    std::cout << "Salary: " << employee.salary << '\n';
 
     return 0;
 }

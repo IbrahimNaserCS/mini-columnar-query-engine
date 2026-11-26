@@ -14,6 +14,18 @@ The size of the `Employee` struct is 16 bytes. Its alignment is 8 bytes, determi
 
 The `ColumnStore::insert` function includes a try catch block. This is needed to maintain consistency between the three vectors. If one insertion succeeds, and another fails, the three will be inconsistent which is incoherent. 
 
+## CSV Format
+
+A CSV file must follow the following format:
+- A header which matches exactly 'id,age,salary'
+- Subsequent rows that match this formatting
+- id and age are integers
+- salary is a double
+
+## Loader Behavior
+
+The loader parses the CSV, and after validating it, returns an `std::vector<Employee>` containing the employees in the file.
+
 ## Building and Testing
 
 To build and test:
