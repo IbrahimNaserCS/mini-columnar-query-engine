@@ -26,6 +26,10 @@ A CSV file must follow the following format:
 
 The loader parses the CSV, and after validating it, returns an `std::vector<Employee>` containing the employees in the file.
 
+## Query Execution
+
+A simple query is currently supported in `query.hpp`, which calculates the average salary for employees older than 30. Both functions return a `std::optional<double>` which is useful in case there are no employees over the age of 30. The `average_salary_row` function requires pulling in all three columns. On the other hand, `average_salary_col` only requires two columns, id and age. 
+
 ## Building and Testing
 
 To build and test:

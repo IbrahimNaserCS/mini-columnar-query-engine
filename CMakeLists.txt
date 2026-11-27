@@ -6,10 +6,11 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Compile our storage implementation into a library.
+# Compile the storage, CSV loader, and query implementations into a library.
 add_library(storage
     src/storage.cpp
     src/csv_loader.cpp
+    src/query.cpp
 )
 
 # Allow files to include "storage.hpp".
@@ -34,3 +35,11 @@ add_executable(storage_tests
 target_link_libraries(storage_tests PRIVATE storage)
 
 add_test(NAME StorageTests COMMAND storage_tests)
+
+add_executable(query_tests
+    tests/query_test.cpp
+)
+
+target_link_libraries(query_tests PRIVATE storage)
+
+add_test(NAME QueryTests COMMAND query_tests)

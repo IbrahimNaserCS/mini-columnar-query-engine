@@ -56,3 +56,18 @@ void ColumnStore::diagnostic() const
         std::cout << "Salary at index " << i << "'s address is: " << &salaries.at(i) << std::endl;
     }
 }
+
+int32_t ColumnStore::get_id(std::size_t index) const
+{
+    return ids.at(index);
+}
+
+int32_t ColumnStore::get_age(std::size_t index) const
+{
+    return ages.at(index);
+}
+
+double ColumnStore::get_salary(std::size_t index) const
+{
+    return salaries.at(index);
+}

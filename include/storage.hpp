@@ -29,6 +29,9 @@ public:
     Employee get(size_t index) const;
     std::size_t size() const;
     void diagnostic() const;
+    int32_t get_id(size_t index) const;
+    int32_t get_age(size_t index) const;
+    double get_salary(size_t index) const;
 
 private:
     std::vector<int32_t> ids;
